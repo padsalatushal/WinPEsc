@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from argparse import ArgumentParser
-
+from pypsexec.client import Client
 
 def get_args():
 	parser = ArgumentParser(description="WinPEsc helps to maintain access to windows machine and have some other cool features like UAC Disable,Firewall Disable,Dumping Credentials,etc.",usage='python3 %(prog)s -t Target -u Username -P Password',epilog='Example: python3 %(prog)s 192.168.101.14 admin P@$$w0rd123')
@@ -20,4 +20,9 @@ username = args.username
 password = args.password
 #print(target,username,password)
 
+
+try:
+	client = Client(target,username=username,password=password,encrypt=False)
+	client.connect()
+	print("Authentication Sucessfull")
 
