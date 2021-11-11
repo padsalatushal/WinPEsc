@@ -14,3 +14,10 @@ def get_args():
 	return args
 
 args = get_args()
+
+target = args.target
+username = args.username
+password = args.password
+#print(target,username,password)
+
+
